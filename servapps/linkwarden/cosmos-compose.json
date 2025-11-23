@@ -40,7 +40,7 @@
             },
             "network_mode": "{ServiceName}",
             "ports": [
-                "7700:7700/tcp"
+                "7700/tcp"
             ],
             "volumes": [
                 {
@@ -93,7 +93,7 @@
             },
             "network_mode": "{ServiceName}",
             "ports": [
-                "5432:5432/tcp"
+                "5432/tcp"
             ],
             "volumes": [
                 {
@@ -146,7 +146,7 @@
             },
             "network_mode": "{ServiceName}",
             "ports": [
-                "3000:3000/tcp"
+                "3000/tcp"
             ],
             "volumes": [
                 {
