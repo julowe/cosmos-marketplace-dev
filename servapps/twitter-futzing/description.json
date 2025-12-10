@@ -1,0 +1,9 @@
+{
+  "name": "TwitterFutzing",
+  "longDescription": "<p>This is a simple web app to read in Twitter Archives of a user's tweets and do some charting and NLP analysis. Web site has the option to also export data to a zip file containing all images/charts and the original data in CSV form and also CSVs of original data plus analysis data.< /p>",
+  "description": "This is a simple web app to read in Twitter Archives of a user's tweets and do some charting and NLP analysis. Web site has the option to also export data to a zip file containing all images/charts and the original data in CSV form and also CSVs of original data plus analysis data.",
+  "tags": ["twitter", "visualization", "self-hosted"],
+  "repository": "https://github.com/julowe/twitter-futzing",
+  "image": "https://github.com/julowe/twitter-futzing/pkgs/container/twitter-futzing",
+  "supported_architectures": ["amd64"]
+}
