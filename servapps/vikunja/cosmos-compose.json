@@ -1,0 +1,100 @@
+{
+  "cosmos-installer": {},
+  "minVersion": "0.9.0",
+  "name": "vikunja",
+  "services": {
+    "{ServiceName}": {
+      "image": "vikunja/vikunja:0.24.6",
+      "hostname": "vikunja",
+      "container_name": "vikunja",
+      "ports": ["3456:3456"],
+      "volumes": [
+        {
+          "source": "{ServiceName}-files",
+          "target": "/app/vikunja/files",
+          "type": "volume"
+        }
+      ],
+      "environment": [
+        "VIKUNJA_SERVICE_PUBLICURL={Hostnames.{StaticServiceName}.{StaticServiceName}.host}/",
+        "VIKUNJA_DATABASE_HOST={ServiceName}-db",
+        "VIKUNJA_DATABASE_PASSWORD={Passwords.0}",
+        "VIKUNJA_DATABASE_TYPE=mysql",
+        "VIKUNJA_DATABASE_USER=vikunja",
+        "VIKUNJA_DATABASE_DATABASE=vikunja",
+        "VIKUNJA_SERVICE_JWTSECRET={Passwords.1}"
+      ],
+      "restart": "unless-stopped",
+      "depends_on": {
+        "vikunja-db": {
+          "condition": "service_healthy"
+        }
+      },
+      "networks": {
+        "{ServiceName}-databases": {}
+      },
+      "network_mode": "{ServiceName}-databases",
+      "labels": {
+        "cosmos.stack": "{ServiceName}",
+        "cosmos-force-network-mode": "{ServiceName}",
+        "cosmos.stack.main": "true"
+      },
+      "routes": [
+        {
+          "name": "{ServiceName}",
+          "description": "Expose {ServiceName} to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}:3456",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
+    },
+    "{ServiceName}-db": {
+      "image": "mariadb:10",
+      "hostname": "{ServiceName}-db",
+      "container_name": "{ServiceName}-db",
+      "command": "--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci",
+      "environment": [
+        "MYSQL_ROOT_PASSWORD={Passwords.2}",
+        "MYSQL_USER=vikunja",
+        "MYSQL_PASSWORD={Passwords.0}",
+        "MYSQL_DATABASE=vikunja"
+      ],
+      "volumes": [
+        {
+          "source": "{ServiceName}-db-data",
+          "target": "/var/lib/mysql",
+          "type": "volume"
+        }
+      ],
+      "restart": "unless-stopped",
+      "networks": {
+        "{ServiceName}-databases": {}
+      },
+      "network_mode": "{ServiceName}-databases",
+      "labels": {
+        "cosmos-force-network-mode": "{ServiceName}",
+        "cosmos.stack": "{ServiceName}"
+      }
+    }
+  },
+  "networks": {
+    "{ServiceName}-databases": {}
+  },
+  "volumes": {
+    "{ServiceName}-files": {
+      "name": "{ServiceName}-files",
+      "driver": "local"
+    },
+    "{ServiceName}-db-data": {
+      "name": "{ServiceName}-db-data",
+      "driver": "local"
+    }
+  }
+}
