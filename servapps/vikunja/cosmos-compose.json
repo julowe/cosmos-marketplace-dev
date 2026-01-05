@@ -36,6 +36,7 @@
       "network_mode": "{ServiceName}-databases",
       "labels": {
         "cosmos.stack": "{ServiceName}",
+        "cosmos-icon": "https://julowe.github.io/cosmos-marketplace/servapps/vikunja/icon.png",
         "cosmos-force-network-mode": "{ServiceName}",
         "cosmos.stack.main": "true"
       },
