@@ -37,7 +37,7 @@
       "labels": {
         "cosmos.stack": "{ServiceName}",
         "cosmos-icon": "https://julowe.github.io/cosmos-marketplace/servapps/vikunja/icon.png",
-        "cosmos-force-network-mode": "{ServiceName}",
+        "cosmos-force-network-mode": "{ServiceName}-databases",
         "cosmos.stack.main": "true"
       },
       "routes": [
@@ -80,7 +80,7 @@
       },
       "network_mode": "{ServiceName}-databases",
       "labels": {
-        "cosmos-force-network-mode": "{ServiceName}",
+        "cosmos-force-network-mode": "{ServiceName}-databases",
         "cosmos.stack": "{ServiceName}"
       }
     }
