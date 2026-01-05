@@ -1,6 +1,6 @@
 {
   "name": "Vikunja",
-  "longDescription": "<p>Vikunja: The open-source, self-hostable to-do app. Vikunja lets you easily share a project with another user or a whole team! You can also assign tasks to people so everybody knows who's working on what. Think of Vikunja like the notebook you have with all your things to keep track of. But with superpowers.< /p>",
+  "longDescription": "<p>Vikunja: The open-source, self-hostable to-do app. Vikunja lets you easily share a project with another user or a whole team! You can also assign tasks to people so everybody knows who's working on what. Think of Vikunja like the notebook you have with all your things to keep track of. But with superpowers.</p>",
   "description": "Vikunja is an open-source, self-hostable to-do app that supports list views, Gantt charts, table views, and kanban boards.",
   "tags": ["kanban", "productivity", "to-do", "trello"],
   "repository": "https://github.com/go-vikunja/vikunja",
