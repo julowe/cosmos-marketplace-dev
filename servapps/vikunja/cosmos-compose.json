@@ -1,5 +1,20 @@
 {
-  "cosmos-installer": {},
+  "cosmos-installer": {
+    "form": [
+      {
+        "name": "enableTrelloMigration",
+        "label": "Do you want to enable Trello Migration? (See https://vikunja.io/docs/config-options/#1-migration-trello for details)",
+        "initialValue": true,
+        "type": "checkbox"
+      },
+      {
+        "name": "trelloPersonalKey",
+        "label": "What is your trello personal key? (Get it from https://trello.com/app-key)",
+        "initialValue": "",
+        "type": "text"
+      }
+    ]
+  },
   "minVersion": "0.9.0",
   "name": "vikunja",
   "services": {
@@ -16,6 +31,10 @@
         }
       ],
       "environment": [
+      {if Context.enableTrelloMigration}
+        "VIKUNJA_MIGRATION_TRELLO_ENABLE=true",
+        "VIKUNJA_MIGRATION_TRELLO_KEY={Context.trelloPersonalKey}",
+      {/if}
         "VIKUNJA_SERVICE_PUBLICURL=https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}/",
         "VIKUNJA_DATABASE_HOST={ServiceName}-db",
         "VIKUNJA_DATABASE_PASSWORD={Passwords.0}",
