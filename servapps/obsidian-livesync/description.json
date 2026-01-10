@@ -1,0 +1,9 @@
+{
+  "name": "Obsidian LiveSync Server",
+  "longDescription": "<p>This is a minimally-configured CouchDB container that can be used with the community-developed synchronisation plug-in for Obsidian. The Self-hosted LiveSync plug-in is a community-developed synchronisation plug-in available on all Obsidian-compatible platforms. It leverages robust server solutions such as CouchDB or object storage systems (e.g., MinIO, S3, R2, etc.) to ensure reliable data synchronisation.</p>",
+  "description": "This is a minimally-configured CouchDB container that can be used with the community-developed synchronisation plug-in for Obsidian.",
+  "tags": ["Obsidian", "notes", "markdown", "plugin", "sync", "couchdb"],
+  "repository": "https://github.com/julowe/obsidian-livesync",
+  "image": "https://github.com/julowe/obsidian-livesync/pkgs/container/obsidian-livesync",
+  "supported_architectures": ["amd64", "arm64"]
+}
