@@ -33,6 +33,7 @@
     ],
     "post-install": [
       {
+        "name": "shlinkPostInstallInfo",
         "type": "info",
         "label": "Shlink server, client, and mariadb are now running! To access the web client, go to https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host} (Note: Because this client UI already has the server's API key provided, this configuration file requires you to login with your Cosmos user and password. Otherwise anyone visiting this link could change your settings and links.) The shlink server's API key is: {Passwords.0} TODO: get correct client url"
       }
