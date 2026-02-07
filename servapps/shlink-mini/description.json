@@ -1,5 +1,5 @@
 {
-  "name": "Shlink URL Shortener",
+  "name": "Shlink",
   "longDescription": "words",
   "description": "Shlink is a URL shortener with an optionally self-host Web UI.",
   "tags": ["shlink", "links", "url", "shortener", "visit tracking", "visitor analytics"],
