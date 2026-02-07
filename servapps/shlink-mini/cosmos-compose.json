@@ -84,6 +84,42 @@
           "type": "volume"
         }
       ]
+    },
+    "{ServiceName}-client": {
+      "image": "shlinkio/shlink-web-client:stable",
+      "container_name": "{ServiceName}-client",
+      "restart": "unless-stopped",
+      "environment": [
+        "SHLINK_SERVER_API_KEY={Passwords.0}",
+        "DEFAULT_DOMAIN={Hostnames.{StaticServiceName}.{StaticServiceName}.host}"
+      ],
+      "labels": {
+        "cosmos-force-network-secured": "true",
+        "cosmos-auto-update": "false",
+        "cosmos-stack": "{ServiceName}",
+        "cosmos-icon": "https://julowe.github.io/cosmos-marketplace-dev/servapps/shlink/icon.png"
+      },
+      "depends_on": {
+        "{ServiceName}": {
+          "condition": "service_started"
+        }
+      },
+      "routes": [
+        {
+          "name": "{ServiceName}-client",
+          "description": "Expose {ServiceName}-client to the web",
+          "useHost": true,
+          "target": "http://{ServiceName}-client:8080",
+          "mode": "SERVAPP",
+          "Timeout": 14400000,
+          "ThrottlePerMinute": 12000,
+          "BlockCommonBots": true,
+          "AuthEnabled": true,
+          "SmartShield": {
+            "Enabled": true
+          }
+        }
+      ]
     }
   }
 }
