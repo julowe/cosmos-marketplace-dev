@@ -8,6 +8,11 @@
         "type": "text"
       },
       {
+        "name": "testVars",
+        "type": "info",
+        "label": "Quick Test: https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host} API key is: {Passwords.0} "
+      },
+      {
         "name": "linkToInfoEnvVars",
         "type": "info",
         "label": "Shlink supports a number of environment variables to customize its behavior. More info is provided here: https://shlink.io/documentation/environment-variables/"
