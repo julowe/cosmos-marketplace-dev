@@ -90,8 +90,9 @@
       "container_name": "{ServiceName}-client",
       "restart": "unless-stopped",
       "environment": [
+        "SHLINK_SERVER_URL=https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host}",
         "SHLINK_SERVER_API_KEY={Passwords.0}",
-        "DEFAULT_DOMAIN={Hostnames.{StaticServiceName}.{StaticServiceName}.host}"
+        "SHLINK_SERVER_NAME={ServiceName}"
       ],
       "labels": {
         "cosmos-force-network-secured": "true",
