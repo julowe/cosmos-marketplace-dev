@@ -6,6 +6,11 @@
         "label": "GeoLite License Key (optional: but if not provided, geolocation of visitors can not be performed)",
         "initialValue": "",
         "type": "text"
+      },
+      {
+        "name": "linkToInfoEnvVars",
+        "type": "info",
+        "label": "Shlink supports a number of environment variables to customize its behavior. More info is provided here: https://shlink.io/documentation/environment-variables/"
       }
     ],
     "post-install": [
