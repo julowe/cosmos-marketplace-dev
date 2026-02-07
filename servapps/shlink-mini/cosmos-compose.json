@@ -1,5 +1,14 @@
 {
-  "cosmos-installer": {},
+  "cosmos-installer": {
+    "form": [
+      {
+        "name": "geoliteLicenseKey",
+        "label": "GeoLite License Key (optional: but if not provided, geolocation of visitors can not be performed)",
+        "initialValue": "",
+        "type": "text"
+      }
+    ]
+  },
   "minVersion": "0.9.0",
   "services": {
     "{ServiceName}": {
@@ -7,6 +16,9 @@
       "container_name": "{ServiceName}",
       "restart": "unless-stopped",
       "environment": [
+        {if Context.geoliteLicenseKey}
+          "GEOLITE_LICENSE_KEY={Context.geoliteLicenseKey}",
+        {/if}
         "INITIAL_API_KEY={Passwords.0}",
         "DB_DRIVER=maria",
         "DB_NAME={ServiceName}",
