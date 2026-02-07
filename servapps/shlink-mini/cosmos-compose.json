@@ -10,7 +10,7 @@
       {
         "name": "testVars",
         "type": "info",
-        "label": "Quick Test: https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host} API key is: {Passwords.0} "
+        "label": "Quick Test: https://{Hostnames.{StaticServiceName}.{StaticServiceName}.host} https://{Hostnames.{StaticServiceName-client}.{StaticServiceName-client}.host} "
       },
       {
         "name": "linkToInfoEnvVars",
