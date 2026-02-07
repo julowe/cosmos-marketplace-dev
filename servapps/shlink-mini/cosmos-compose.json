@@ -10,7 +10,7 @@
       {
         "name": "linkToInfoEnvVars",
         "type": "info",
-        "label": "Shlink supports a number of environment variables to customize its behavior. More info is provided here: https://shlink.io/documentation/environment-variables/"
+        "label": "<a href='https://shlink.io/documentation/environment-variables/'>Shlink supports a number of environment variables to customize its behavior</a>"
       }
     ],
     "post-install": [
